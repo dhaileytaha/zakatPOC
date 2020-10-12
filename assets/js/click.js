@@ -1,5 +1,9 @@
 
 //Zakaat    
+$("#rm").click(function(){
+    $("#assetText_zk").html("<img src='images/rm.png' width='20'>MYR<input type='hidden' id='asset_zk' value='MYR'>");  
+    console.log($("#asset_zk").val());
+})
 $("#btc").click(function(){
     $("#assetText_zk").html("<img src='images/btc.png' width='20'>BTC<input type='hidden' id='asset_zk' value='BTC'>");  
     console.log($("#asset_zk").val());

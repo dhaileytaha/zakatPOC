@@ -17,7 +17,7 @@
             finish : 'Submit',
             current : ''
         },
-        titleTemplate : '<div class="title"><span class="title-text">#title#</span><span class="title-number">0#index#</span></div>',
+        titleTemplate : '<div class="title" style="display:none"><span class="title-text">#title#</span><span class="title-number">0#index#</span></div>',
         onFinished: function (event, currentIndex)
         {
             console.log('Sumited');
@@ -29,7 +29,7 @@
 
 
 var typed3 = new Typed('#typed', {
-        strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
+        strings: ['<i><b> Zakat</b></i>', '<i><b> Zakat</b></i>', '<i><b> Zakat</b></i>', '<i><b> Zakat</b></i>'],
         typeSpeed: 100,
         backSpeed: 100,
         smartBackspace: true, // this is a default
@@ -210,7 +210,7 @@ $("#zk_btn").click(function(){
 
 
 $(function() {
-  $('a[href*=#]').on('click', function(e) {
+  $('a[href^="#"]').on('click', function(e) {
     e.preventDefault();
     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 600, 'linear');
   });

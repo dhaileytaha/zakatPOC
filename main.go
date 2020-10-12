@@ -254,6 +254,7 @@ import (
 		var (
 			amt string
 			asset string
+			asset_price float64
 		)
 
 		amt = r.FormValue("amt")
@@ -262,11 +263,15 @@ import (
 		fmt.Println("amount = "+amt)
 		fmt.Println("asset = "+asset)
 
-		fmt.Println(price(asset))
-
 		balance, err := strconv.ParseFloat(amt, 64)
-		asset_price := price(asset)
-
+		if asset == "MYR" {
+			asset_price = 0.23
+		} else { 
+			
+			fmt.Println(price(asset))
+			
+			asset_price = price(asset)
+		}
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -308,9 +313,9 @@ import (
 
 
 		// Malaysian Ringgit
-		rm := final * 4.30 // 1 usd to rm value is 4.30
+		rm := final * 4.28 // 1 usd to rm value is 4.30
 
-		nisaab_rm := 75 * 240.15 // 75 gms * per 1 gram of gold in RM
+		nisaab_rm := 75 * 224.05 // 75 gms * per 1 gram of gold in RM
 
 		OnZakaat_rm := rm - nisaab_rm // The value on which zakaat comes
 
@@ -327,14 +332,14 @@ import (
 		fmt.Println(math.Round(zakaatinRinggit*1000)/1000)
 
 
-		type detials struct {
+		type details struct {
 			Asset string `json:"asset"`
 			Zakaat_in_USD float64 `json:"zakaat_in_USD"`
 			Zakaat_in_gold float64 `json:"zakaat_in_gold"`
 			Zakaat_in_bitcoin float64 `json:"zakaat_in_bitcoin"`
 			Zakaat_in_rm float64 `json:"zakaat_in_rm"`
 		}
-		mapD := &detials {
+		mapD := &details {
 			Asset:asset, 
 			Zakaat_in_USD: zakaat_in_USD, 
 			Zakaat_in_gold: zakaat_in_gold, 

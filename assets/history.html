@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alms</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+    
+    <!-- Main css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- Font Awesome -->    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script> 
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPH2ANNIq8g_uLJ3rlfYphaf3r4lJRgVs&callback=initMap">
+    </script> 
+
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+       .payInput {
+            margin-left: 20px;
+            margin-bottom: 10px;
+            width: 87%;
+       }
+    </style>
+</head>
+<body  onload="myFunction()" class="parallax">
+  <div id="loader"></div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+    <div class="topnav" id="myTopnav">
+
+      <!-- <a href="/blog"></a>
+      <a href="/deifi">De-iFi</a> -->
+      <a href="ngo.html" target="_blank">id: 0x7094F8B1a2a1EeA360D79Be99bAeF18175aa30Ca</a>
+      <a href="#"  style="background: -webkit-linear-gradient(0deg, #884d80 0%, #9795f0 0%, #2b5876 0%, #4e4376 100%)">History</a>
+      <a href="index.html" target="_blank"><span>Donor</span></a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="/" class="" style="float: left;">ALMS TRACKING AND TRACING</a>
+    </div>
+    <div class="main">
+        <div class="container" style="margin-bottom: 30px">
+            <p style="font-size:30px;color:#fff;text-align:center;"> List of beneficiaries</p>
+        </div>
+    </div>
+
+
+
+     <!-- List of Beneficiary -->
+      <div class="main" id="list">
+        
+        <div class="row" style="margin-bottom: 100px">
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <img src="images/poor.jpeg" width="300" height="200">
+                    <!-- <h1>Bitcoin layer 2</h1>  -->
+                    <h4>Person A is Eligible For Zakaat</h4>
+                    <button type="button" class="btn btn-primary"> <span class="">Verified by UN</span></button>
+                    <br><br>
+                    <input type="text" name="" id="" class="payInput form-control" placeholder="Enter Amount in MYR">
+
+                    <a href="payment.html" target="_blank"><button type="button" class="btn btn-success btn-lg">PAY</button></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <img src="images/poor1.jpeg" width="300" height="200">
+                    <!-- <h1>DEX and pooling</h1>  -->
+                    <h4>Person B is Eligible for Zakaat</h4>
+                    <button data-toggle="modal" data-target="#myModal1"  type="button" class="btn btn-primary"> <span class="">Verified by UN</span></button>
+                    <br><br>
+                    <input type="text" name="" id="" class="payInput form-control" placeholder="Enter Amount in MYR">
+
+                    <button type="button" class="btn btn-success btn-lg"> PAY</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <img src="images/poor2.jpg" width="300" height="200">
+                    <!-- <h1>Asset tokenization</h1>  -->
+                    <h4>Person C is Eligible for Zakaat</h4>
+                    
+                    <button data-toggle="modal" data-target="#myModal2" type="button" class="btn btn-primary"> <span class="">Verified by UN</span></button>
+                    <br><br>
+                    <input type="text" name="" id="" class="payInput form-control" placeholder="Enter Amount in MYR">
+
+                    <button type="button" class="btn btn-success btn-lg">PAY</button>
+                </div>
+            </div>
+               
+        </div>
+          
+
+     </div>
+
+
+     <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Complete KYC and Sign up for Payment of Zakat </h4>
+        </div>
+        <div class="modal-body">
+          <button class="btn btn-default btn-lg"><a href="kyc.html" target="_blank"> Click here </a></button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+    <!-- Modal -->
+  <div class="modal fade" id="transferModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Transfer your Zakaat to Volunteer</h4>
+        </div>
+        <div class="modal-body">
+          
+          <form class=""> 
+            <div class="form-group">
+              <label for="">Amount:</label>
+              <input type="number" class="form-control" id="pwd">
+            </div>
+            
+            <button type="button" class="btn btn-success">Submit</button>
+          </form>
+          <p>If the volunteer does not move the Zakaat or get in touch the Zakaat money is automatically reverted.</p>
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <!--  <div class="soc-icons">
+            <i class="fa fa-facebook-square fa-3x p20" aria-hidden="true"></i>
+            <i class="fa fa-twitter fa-3x p20" aria-hidden="true"></i>
+            <i class="fa fa-reddit fa-3x p20" aria-hidden="true"></i>
+            <i class="fa fa-telegram fa-3x p20" aria-hidden="true"></i>
+            <i class="fab fa-discord p20" style='font-size:38px' aria-hidden="true"></i>
+          </div>   --> 
+</div>
+    <script type="text/javascript">
+ function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: -28.024, lng: 140.887}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat: -31.563910, lng: 147.154312},
+        {lat: -33.718234, lng: 150.363181},
+        {lat: -33.727111, lng: 150.371124},
+        {lat: -33.848588, lng: 151.209834},
+        {lat: -33.851702, lng: 151.216968},
+        {lat: -34.671264, lng: 150.863657},
+        {lat: -35.304724, lng: 148.662905},
+        {lat: -36.817685, lng: 175.699196},
+        {lat: -36.828611, lng: 175.790222},
+        {lat: -37.750000, lng: 145.116667},
+        {lat: -37.759859, lng: 145.128708},
+        {lat: -37.765015, lng: 145.133858},
+        {lat: -37.770104, lng: 145.143299},
+        {lat: -37.773700, lng: 145.145187},
+        {lat: -37.774785, lng: 145.137978},
+        {lat: -37.819616, lng: 144.968119},
+        {lat: -38.330766, lng: 144.695692},
+        {lat: -39.927193, lng: 175.053218},
+        {lat: -41.330162, lng: 174.865694},
+        {lat: -42.734358, lng: 147.439506},
+        {lat: -42.734358, lng: 147.501315},
+        {lat: -42.735258, lng: 147.438000},
+        {lat: -43.999792, lng: 170.463352}
+      ]
+
+
+    </script>
+    <!-- JS -->
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/click.js"></script>
+ <script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 900);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+</body>
+</html>

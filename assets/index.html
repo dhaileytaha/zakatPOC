@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="colorlib.com">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>De-iFi</title>
+    <title>Alms</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -21,67 +21,65 @@
     <!-- Font Awesome -->    
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script> 
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPH2ANNIq8g_uLJ3rlfYphaf3r4lJRgVs&callback=initMap">
+    </script> 
+
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
 </head>
 <body  onload="myFunction()" class="parallax">
   <div id="loader"></div>
   <div style="display:none;" id="myDiv" class="animate-bottom">
     <div class="topnav" id="myTopnav">
 
-      <a href="/blog">Blog</a>
-      <a href="/deifi">De-iFi</a>
-      <a href="/faqs">FAQs</a>
-      <a href="#about"><span>About</span></a>
+      <!-- <a href="/blog"></a>
+      <a href="/deifi">De-iFi</a> -->
+      <a href="ngo.html" target="_blank">Goverment</a>
+      <a href="volunteer.html" target="_blank">Auditor</a>
+      <a href="index.html" target="_blank" style="background: -webkit-linear-gradient(0deg, #884d80 0%, #9795f0 0%, #2b5876 0%, #4e4376 100%)"><span>Donors</span></a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="/" class="" style="float: left;"><img src="images/deifi_2.png" width="90"></a>
+      <a href="/" class="" style="float: left;">ALMS TRACKING AND TRACING</a>
     </div>
     <div class="main">
         <div class="container" style="margin-bottom: 30px">
-            <p style="font-size:30px;color:#fff;text-align:center;"> Calculate<span id="typed"></span> in crypto</p>
+            <p style="font-size:30px;color:#fff;text-align:center;"> Calculate & Pay<span id="typed"></span> </p>
 
             <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
                 <h3>
-                    Zakaat
+                    <!-- Zakaat -->
                 </h3>
                 <fieldset>
-                    <h2>Calculate your Zakat</h2>
+                    <h2>Calculate your Zakat/Alms</h2>
                     <!-- <form method="POST"> -->
                         <div class="form-inline col-lg-12 col-xs-12 mb40">
                             <div class="btn-group col-lg-3 col-xs-3">
                                 <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_zk">
-                                  <img src="images/btc.png" width="20">
-                                  BTC<input type='hidden' id='asset_zk' value='BTC'></span>
+                                  <img src="images/rm.png" width="20">
+                                  MYR<input type='hidden' id='asset_zk' value='MYR'></span>
                                   <span class="glyphicon glyphicon-chevron-down"></span>
                                 </button>
                                 
                                 <ul class="dropdown-menu">
                                   <!-- <li class="dropdown-header">Member name (you)</li> -->
-                                  <li id="btc">
-                                    <a href="#" title="Select this card"><img src="images/btc.png" width="20">BTC</a>
+                                  <li id="rm">
+                                    <a href="#" title="Select this card"><img src="images/rm.png" width="20">MYR</a>
                                   </li>
-                                  <li id="eth">
-                                    <a href="#" title="Select this card"><img src="images/eth.png" width="20">ETH</a>
-                                  </li>
-                                  <li id="usdt">
-                                    <a href="#" id="eth" title="Select this card"><img src="images/usdt.png" width="20">USDT</a>
-                                  </li>
-                                 <!--  <li class="dropdown-header">Member name</li> -->
-                                  <li id="mkr">
-                                    <a href="#" title="Select this card"><img src="images/mkr.png" width="20">MKR</a>
-                                  </li>
-                                  <li id="bch">
-                                    <a href="#" title="Select this card"><img src="images/bch.png" width="20">BCH</a>
-                                  </li>
-                                  <li id="xrp">
-                                    <a href="#" title="Select this card"><img src="images/xrp.png" width="20">XRP</a>
-                                  </li>
+                                  
                                 </ul>
                               </div>
-                            <input type="number" min="0" name="amount" id="amount" 
+                            <input type="number" min="0" name="amount" id="total" 
                             placeholder="Enter amount" class="col-lg-6 col-xs-6" />
-                            <button type="button" class="btnSb col-lg-2 col-xs-2" id="zk_btn" data-loading-text="<i class='fa fa-spinner fa-spin fa-2x'></i>">Submit</button>
+                            <button type="button" class="btnSb col-lg-2 col-xs-2" id="zk_btn1" data-loading-text="<i class='fa fa-spinner fa-spin fa-2x'></i>" >Submit</button>
                             
                         </div>
                     <!-- </form> -->
@@ -89,193 +87,181 @@
                     <!-- <h1 class="output" id="welcome_msg">Welcome to De-iFi!</h1> -->
                     <h1 class="output" id="zakaat_in_btc"></h1>
                     <p class="output rest"></p>        
-                    <p id="zk_note"><i>Note: Zakaat is calculated on 2.5% of savings on excess of 75 grams of gold</i></p>           
+                    <p id="zk_note"><i>Note: Zakaat is calculated on 2.5% of savings on excess of 75 grams of gold (~ MYR 15,762.00)</i></p>           
                 </fieldset>
 
-                <h3>
-                    Hajj
-                </h3>
-                <fieldset>
-                    <h2>Calculate your Hajj</h2>
-                     <div class="form-inline col-lg-12 col-xs-12 mb40">
-                           <div class="btn-group col-lg-3 col-xs-3">
-                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_hajj">
-                                  <img src="images/btc.png" width="20">
-                                  BTC</span><input type='hidden' id='asset_hajj' value='BTC'>
-                                  <span class="glyphicon glyphicon-chevron-down"></span>
-                                </button>
-                                
-                                <ul class="dropdown-menu">
-                                  <!-- <li class="dropdown-header">Member name (you)</li> -->
-                                  <li id="btc_hajj">
-                                    <a href="#" title="Select this card"><img src="images/btc.png" width="20">BTC</a>
-                                  </li>
-                                  <li id="eth_hajj">
-                                    <a href="#" title="Select this card"><img src="images/eth.png" width="20">ETH</a>
-                                  </li>
-                                  <li id="usdt_hajj">
-                                    <a href="#" id="eth" title="Select this card"><img src="images/usdt.png" width="20">USDT</a>
-                                  </li>
-                                 <!--  <li class="dropdown-header">Member name</li> -->
-                                  <li id="mkr_hajj">
-                                    <a href="#" title="Select this card"><img src="images/mkr.png" width="20">MKR</a>
-                                  </li>
-                                  <li id="bch_hajj">
-                                    <a href="#" title="Select this card"><img src="images/bch.png" width="20">BCH</a>
-                                  </li>
-                                  <li id="xrp_hajj">
-                                    <a href="#" title="Select this card"><img src="images/xrp.png" width="20">XRP</a>
-                                  </li>
-                                </ul>
-                              </div>
-                        <input type="number" min="0" name="amount" class="col-lg-6 col-xs-6" id="hajj_amount" 
-                        placeholder="Enter amount"/>
-                        <button type="button" class="btnSb col-lg-2 col-xs-2" id="hajj_btn">Submit</button>
-                        
-                    </div>
-                    <p class="output" id="hajj_result"></p>
-                    <p id="hajj_note"></p>
-                </fieldset>
-
-                <h3>
-                    Qurbani
-                </h3>
-                <fieldset> 
-                    <h2>Calculate your Qurbani</h2>
-                      <div class="form-inline col-lg-12 col-xs-12 mb40">
-                           <div class="btn-group col-lg-3 col-xs-3">
-                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_qurbani">
-                                  <img src="images/btc.png" width="20">
-                                  BTC</span><input type='hidden' id='asset_qurbani' value='BTC'>
-                                  <span class="glyphicon glyphicon-chevron-down"></span>
-                                </button>
-                                
-                                <ul class="dropdown-menu">
-                                  <!-- <li class="dropdown-header">Member name (you)</li> -->
-                                  <li id="btc_qurbani">
-                                    <a href="#" title="Select this card"><img src="images/btc.png" width="20">BTC</a>
-                                  </li>
-                                  <li id="eth_qurbani">
-                                    <a href="#" title="Select this card"><img src="images/eth.png" width="20">ETH</a>
-                                  </li>
-                                  <li id="usdt_qurbani">
-                                    <a href="#" id="eth" title="Select this card"><img src="images/usdt.png" width="20">USDT</a>
-                                  </li>
-                                 <!--  <li class="dropdown-header">Member name</li> -->
-                                  <li id="mkr_qurbani">
-                                    <a href="#" title="Select this card"><img src="images/mkr.png" width="20">MKR</a>
-                                  </li>
-                                  <li id="bch_qurbani">
-                                    <a href="#" title="Select this card"><img src="images/bch.png" width="20">BCH</a>
-                                  </li>
-                                  <li id="xrp_qurbani">
-                                    <a href="#" title="Select this card"><img src="images/xrp.png" width="20">XRP</a>
-                                  </li>
-                                </ul>
-                              </div>
-                        <input type="number" min="0" name="amount" id="amount_qurbani" class="col-lg-6 col-xs-6" 
-                        placeholder="Enter Amount"/>
-                        <button type="button" class="btnSb col-lg-2 col-xs-2" id="qur_btn">Submit</button>
-                    </div>    
-                        <p class="output" id="qurbani_result"></p>
-                        <p id="qurbani_note" class="text-center"></p>
-                    
-                </fieldset>
-                <h3>
-                    Fitra
-                </h3>
-                <fieldset> 
-                    <h2>Calculate your Fitra</h2>
-                     <div class="form-inline col-lg-12 col-xs-12 mb40">
-                           <div class="btn-group col-lg-6 col-xs-6">
-                                <button type="button" style="width: 100%" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_fitra">
-                                  <img src="images/btc.png" width="20">
-                                  BTC</span><input type='hidden' id='asset_fitra' value='BTC'>
-                                  <span class="glyphicon glyphicon-chevron-down"></span>
-                                </button>
-                                
-                                <ul class="dropdown-menu" style="min-width:92%">
-                                  <!-- <li class="dropdown-header">Member name (you)</li> -->
-                                  <li id="btc_fitra">
-                                    <a href="#" title="Select this card"><img src="images/btc.png" width="20">BTC</a>
-                                  </li>
-                                  <li id="eth_fitra">
-                                    <a href="#" title="Select this card"><img src="images/eth.png" width="20">ETH</a>
-                                  </li>
-                                  <li id="usdt_fitra">
-                                    <a href="#" id="eth" title="Select this card"><img src="images/usdt.png" width="20">USDT</a>
-                                  </li>
-                                 <!--  <li class="dropdown-header">Member name</li> -->
-                                  <li id="mkr_fitra">
-                                    <a href="#" title="Select this card"><img src="images/mkr.png" width="20">MKR</a>
-                                  </li>
-                                  <li id="bch_fitra">
-                                    <a href="#" title="Select this card"><img src="images/bch.png" width="20">BCH</a>
-                                  </li>
-                                  <li id="xrp_fitra">
-                                    <a href="#" title="Select this card"><img src="images/xrp.png" width="20">XRP</a>
-                                  </li>
-                                </ul>
-                              </div>
-                        
-                        <button type="button" class="btnSb col-lg-6 col-xs-6" id="fitra_btn" style="width: 45%">Submit</button>
-                    </div>
-                        <p class='ftcss'>Your total Fitra will per individual:</p>
-                        <p class="output" id="fitra_result"></p>
-                        <p id="fitra_note" class="text-center"></p>
-                    
-                </fieldset>
-            </form>
+  
             <section id="section02" class="demo">
               <!-- <h1>Scroll Down Button #2</h1> -->
-              <a href="#about"><span></span></a>
+              <a href="#list"><span></span></a>
             </section>
 
         </div>
     </div>
 
-    <div class="main" id="about">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 500 350">
-          <g id="UrTavla">
-            <circle style="fill:white;stroke-miterlimit:10;" cx="90" cy="165" r="165">
-            </circle>
-            <text x="20%" y="20%" text-anchor="middle" dy="1em" style="font-family: Poppins; ">
-            
-            <!-- <tspan x="20%" dy="2em" style="; font-size: 8px">a step towards </tspan> -->
-            <tspan x="22%" dy="2em" style="font-weight: bold; font-size: 10px">De-iFi: Decentralized Islamic Finance</tspan>
-                
-            <tspan x="20.5%" dy="2em" style="font-size: 8px">A guide towards using DeFi platforms as per </tspan>
-            <tspan x="19.4%" dy="1.2em" style="font-size: 8px">the principles of Islamic Finance such as:</tspan>
-            
-            <tspan x="16%" dy="3em" style="font-size: 8px">[1] Ethical and Green investments</tspan>
-            <tspan x="18.7%" dy="1.2em" style="font-size: 8px">[2] Prohibiton of investment in excessive </tspan>
-            <tspan x="12.7%" dy="1.2em" style="font-size: 8px">speculative market</tspan>
-            <tspan x="16.3%" dy="1.2em" style="font-size: 8px">[3] A profit and loss sharing model</tspan>
-            <tspan x="17%" dy="1.2em" style="font-size: 8px">[4] Lending without Usury or interest</tspan>
 
-            <tspan x="24%" dy="2.5em" style="font-size: 8px">Although Islamic Finance is worth $2.2 trillion globally</tspan>
-            <tspan x="21.3%" dy="1.2em" style="font-size: 8px">it has poor accessibility and is highly censored </tspan>
-            <tspan x="23.5%" dy="2em" style="font-size: 8px">DeFi with its Open and censorship-resistance model </tspan>
-            <tspan x="19.7%" dy="1.2em" style="font-size: 8px">can tap huge resources in Islamic Finance</tspan>
 
-            <tspan x="20%" dy="4em" style="font-size: 8px;font-style: italic; ">This platform can help you navigate</tspan>
-            <tspan x="20%" dy="1.2em" style="font-size: 8px;font-style: italic;">the use of DeFi as per Islamic Jurisdiction </tspan>
-            </text>
-            <image href="images/section2img.png" x="52%" y="10%" height="200" width="200"/>
-          </g>
-        </svg>
-         
+     <!-- List of Beneficiary -->
+      <div class="main" id="list" style="margin-top: 250px">
+        
+       <h2 style="font-size:30px;color:#fff;text-align:center;">List of beneficiaries</h2>
+        <div class="row" style="margin-bottom: 100px">
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <img src="images/poor.jpeg" width="300" height="200">
+                    <!-- <h1>Bitcoin layer 2</h1>  -->
+                    <h4>Person A is Eligible For Zakaat</h4>
+                    <button type="button" class="btn btn-primary"> <span class="">Verified by UN</span></button>
+                    <br><br><br>
+                    <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-success btn-lg">PAY</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <img src="images/poor1.jpeg" width="300" height="200">
+                    <!-- <h1>DEX and pooling</h1>  -->
+                    <h4>Person B is Eligible for Zakaat</h4>
+                    <button data-toggle="modal" data-target="#myModal1"  type="button" class="btn btn-primary"> <span class="">Verified by UN</span></button>
+                    <br><br><br>
+                    <button type="button" class="btn btn-success btn-lg"> PAY</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <img src="images/poor2.jpg" width="300" height="200">
+                    <!-- <h1>Asset tokenization</h1>  -->
+                    <h4>Person C is Eligible for Zakaat</h4>
+                    
+                    <button data-toggle="modal" data-target="#myModal2" type="button" class="btn btn-primary"> <span class="">Verified by UN</span></button>
+                    <br><br><br>
+                    <button type="button" class="btn btn-success btn-lg">PAY</button>
+                </div>
+            </div>
+               
+        </div>
+          
+
      </div>
-     <div class="soc-icons">
+
+
+     <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Complete KYC and Sign up for Payment of Zakat </h4>
+        </div>
+        <div class="modal-body">
+          <button class="btn btn-default btn-lg"><a href="kyc.html" target="_blank"> Click here </a></button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+    <!-- Modal -->
+  <div class="modal fade" id="transferModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Transfer your Zakaat to Volunteer</h4>
+        </div>
+        <div class="modal-body">
+          
+          <form class=""> 
+            <div class="form-group">
+              <label for="">Amount:</label>
+              <input type="number" class="form-control" id="pwd">
+            </div>
+            
+            <button type="button" class="btn btn-success">Submit</button>
+          </form>
+          <p>If the volunteer does not move the Zakaat or get in touch the Zakaat money is automatically reverted.</p>
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <!--  <div class="soc-icons">
             <i class="fa fa-facebook-square fa-3x p20" aria-hidden="true"></i>
             <i class="fa fa-twitter fa-3x p20" aria-hidden="true"></i>
             <i class="fa fa-reddit fa-3x p20" aria-hidden="true"></i>
             <i class="fa fa-telegram fa-3x p20" aria-hidden="true"></i>
             <i class="fab fa-discord p20" style='font-size:38px' aria-hidden="true"></i>
-          </div>   
+          </div>   --> 
 </div>
+    <script type="text/javascript">
+ function initMap() {
 
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: -28.024, lng: 140.887}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat: -31.563910, lng: 147.154312},
+        {lat: -33.718234, lng: 150.363181},
+        {lat: -33.727111, lng: 150.371124},
+        {lat: -33.848588, lng: 151.209834},
+        {lat: -33.851702, lng: 151.216968},
+        {lat: -34.671264, lng: 150.863657},
+        {lat: -35.304724, lng: 148.662905},
+        {lat: -36.817685, lng: 175.699196},
+        {lat: -36.828611, lng: 175.790222},
+        {lat: -37.750000, lng: 145.116667},
+        {lat: -37.759859, lng: 145.128708},
+        {lat: -37.765015, lng: 145.133858},
+        {lat: -37.770104, lng: 145.143299},
+        {lat: -37.773700, lng: 145.145187},
+        {lat: -37.774785, lng: 145.137978},
+        {lat: -37.819616, lng: 144.968119},
+        {lat: -38.330766, lng: 144.695692},
+        {lat: -39.927193, lng: 175.053218},
+        {lat: -41.330162, lng: 174.865694},
+        {lat: -42.734358, lng: 147.439506},
+        {lat: -42.734358, lng: 147.501315},
+        {lat: -42.735258, lng: 147.438000},
+        {lat: -43.999792, lng: 170.463352}
+      ]
+
+
+    </script>
     <!-- JS -->
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -296,6 +282,33 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
+
+$("#zk_btn1").click(function(){
+
+var total = $("#total").val();
+console.log("total="+total);
+zakat = (total-15762)*0.025;
+zakat = Math.round(zakat * 100) / 100;
+  console.log(zakat);
+  $(".zkcss").show();
+  $("#zakaat_in_btc").show();
+
+  if(zakat < 0){
+
+    $("#zakaat_in_btc").html("0 MYR");
+
+  } else {
+
+  $("#zakaat_in_btc").html("MYR "+zakat);
+
+  }
+  $(".content").css("height", "300px");
+  $(".rest").show();
+  $(".rest").html();
+  
+  $("#zk_note").show();
+
+})
 </script>
 
 </body>
